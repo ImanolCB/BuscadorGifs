@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import ListOfGifs from './components/ListOfGifs';
+import { Route } from 'wouter';
 
 function App() {
+
+  // HOOKS
+  // const [keyword, setKeyword] = useState('Hola') //Efecto de eatado
+  
+  /**
+   * TODO: Arreglar la obtencion de la URL
+  */
+  //RENDER de componente
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section className="App-content">
+        {/* <button onClick={() => setKeyword('Mapache')}>Cambiar</button> */}
+        
+        <Route 
+          component={ListOfGifs}
+          path="/gifs/:keyword"/>
+          
+      </section>
     </div>
   );
 }
